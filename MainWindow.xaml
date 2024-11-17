@@ -1,0 +1,31 @@
+﻿<Window x:Class="SpinAnimation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpinAnimation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <!-- Image to animate -->
+        <Image x:Name="AnimatedImage"
+               Source="Resources/CC.png"
+               RenderTransformOrigin="0.5,0.5"
+               Width="100" Height="100">
+            <!-- Add a transform group for animation -->
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <RotateTransform />
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- MediaElement to play sound -->
+        <MediaElement x:Name="BatmanSound"
+                      Source="Resources/Batman.mp3"
+                      LoadedBehavior="Manual"
+                      UnloadedBehavior="Stop" />
+    </Grid>
+</Window>
